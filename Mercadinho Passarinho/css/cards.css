@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+:root{
+    --clr-neutral-900: hsl(207, 19%, 9%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-accent-600:  hsl(200, 93%, 16%);
+    --clr-accent-200:  hsl(199, 53%, 44%);
+    --clr-accent-100: hsl(201, 84%, 81%);
+}
+
+*
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.titulo-prod{
+    margin-top: 1%;
+    width: 20%;
+    background-color: var(--clr-accent-600);
+    text-align: center;
+    color: var(--clr-neutral-100);
+    border-radius: 0px 50px 50px 0px;
+    font-size: larger;
+    font-family:  'Lato', sans-serif;
+    padding: 1px 0px;
+}
+
+.cartoes{
+    margin: 20px 0px 10px 40px;
+}
+
+.card-content > a{
+    color: var(--clr-neutral-100) !important;
+    display: inline-block;
+}
+
+.card{
+    color: var(--clr-neutral-100);
+    background-size: cover;
+    padding: 10rem 0 0 ;
+    max-width: 35ch;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    place-items: center;
+    font-family: 'Lato', sans-serif;
+    border-radius: 1em;
+    overflow: hidden;
+    display: inline-block;
+    border: 3px solid hsl(200 93% 16% / 0.7);
+    transition: transform 500ms ease;
+}
+
+.card:hover,
+.card:focus-within{
+    transform: scale(1.05);
+}
+
+.card-content{
+    --padding: 1.5rem;
+    padding: var(--padding);
+    background: linear-gradient(
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 0.4) 20%,
+    hsl(0 0% 0% / 0.75)
+    );
+}
+
+.card-title{
+    position: relative;
+    width: max-content;
+    margin-left: -20px;
+    padding: 0.4rem;
+}
+
+.card-title::after{
+    content: "";
+    position: absolute;
+    height: 4px;
+    left: calc(var(--padding) * -1 );
+    bottom: 0;
+    width: calc(100% + var(--padding));
+    background: var(--clr-accent-200);
+    transform-origin: left;
+    transition: transform 500ms ease;
+}
+
+.card:hover .card-title::after,
+.card:focus-within .card-title::after {
+    transform: scaleX(1);
+}
+
+.card-body{
+    color: hsl(201, 84%, 81%);
+}
+
+@media (hover) {
+    .card-content{
+        transform: translateY(60%);
+        transition: transform 500ms ease;
+    }
+    .card:hover .card-content,
+    .card:focus-within .card-content {
+        transform: translateY(0);
+        transition-delay: 500ms;
+    }
+
+    .card:focus-within .card-content {
+        transition-duration: 0ms;
+    }
+
+    .card-content > *:not(.card-title)  {
+        opacity: 0;
+        transition: opacity 500ms linear;
+    }
+
+    .card:hover .card-content > *:not(.card-title),
+    .card:focus-within .card-content > *:not(.card-title) {
+        opacity: 1;
+        transition-delay: 550ms;
+    }
+
+    .card-title::after {
+        transform: scaleX(0);
+    }
+}
+
+.qtd-input{
+    width: 100px;
+    height: 20px;
+}
+
+.button{
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-accent-200);
+    margin-top: 3px;
+    padding: 0.5em 1.25em;
+    border-radius: 25px;
+}
+
+.button:hover,
+.button:focus{
+    background-color: var(--clr-neutral-100);
+    color: var(--clr-neutral-900) !important;
+    transition: 0.5s ease;
+    transition-delay: 0ms;
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms
+        !important;
+        animation-iteration-count: 1
+        !important;
+        transition-duration: 0.01ms
+        !important;
+        scroll-behavior: auto 
+        !important;
+        transition-delay: 0ms 
+        !important;
+    }
+}
+
+/* BG-IMG DOS PRODUTOS */
+
+#arroz{
+    background-image: url(../imagens/arroz.jpg);
+}
+
+#feijao{
+    background-image: url(../imagens/feijao-camil.jpeg);
+}
+
+#macarrao{
+    background-image: url(../imagens/macarrão.jpg);
+}
+
+#bolacha-trakinas-choco{
+    background-image: url(../imagens/trakinas.jpg);
+}
+
+#bolacha-panco{
+    background-image: url(../imagens/bolacha.jpg);
+}
+
+#oleo{
+    background-image: url(../imagens/oleo-soja-liza.png);
+}
+
+#margarina{
+    background-image: url(../imagens/margarina-qualy.jpeg);
+}
+
+#file-peito{
+    background-image: url(../imagens/file-de-peito.jpeg);
+}
+
+#filezinho{
+    background-image: url(../imagens/filezinho-temperado.jpeg);
+}
+
+#frango-passarinho{
+    background-image: url(../imagens/frango-passarinho-congelado.jpeg);
+}
+
+#linguica-toscana{
+    background-image: url(../imagens/linguica-toscana.jpeg);
+}
+
+#penne{
+    background-image: url(../imagens/penne-parisiense.jpeg);
+}
+
+#salsicha{
+    background-image: url(../imagens/salsicha-hotdog.jpeg);
+}
+
+#steak-frango{
+    background-image: url(../imagens/steak-de-frango.jpeg);
+}
+
+#bisteca-suina{
+    background-image: url(../imagens/bisteca-suina.jpeg);
+}
+
+#batata-frita{
+    background-image: url(../imagens/batatafrita.jpg);
+}
+
+#dolly-limao{
+    background-image: url(../imagens/dolly.jpg);
+}
+
+#coca-lata{
+    background-image: url(../imagens/coca\ lata.jpg);
+}
+
+#coca-garrafa{
+    background-image: url(../imagens/coca\ garrafa.jpg);
+}
+
+#coca-2l{
+    background-image: url(../imagens/coca\ 2l.jpg);
+}
+
+#detergente{
+    background-image: url(../imagens/detergente.jpg);
+}
+
+#creme{
+    background-image: url(../imagens/creme-cabelo.jpeg);
+}
+
+#amaciante{
+    background-image: url(../imagens/amaciante.jpg);
+}
+
+#escova-dente{
+    background-image: url(../imagens/escova-de-dente.jpeg);
+}
